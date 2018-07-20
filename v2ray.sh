@@ -29,7 +29,8 @@ if [[ "$IP" = "" ]]; then
     ipc=$(wget -qO- -t1 -T2 ipv4.icanhazip.com)
 fi
 
-uuid=$(cat /proc/sys/kernel/random/uuid)
+#uuid=$(cat /proc/sys/kernel/random/uuid)
+uuid=fea41d6f-9764-4822-9289-f007409ff55b
 
 function Install(){
 #Install Basic Packages
@@ -242,7 +243,7 @@ cat << EOF > config
             {
                 "id": "$uuid",
                 "level": $level,
-                "alterId": 100
+                "alterId": 255
             }
         ]
     }${mkcp}${httpheader}
