@@ -71,7 +71,8 @@ echo ''
 echo '此脚本会关闭iptables防火墙，切勿用于生产环境！'
 
 while :; do echo
-	read -p "输入用户等级（自用请输入1，共享请输入0）:" level
+	read -p "输入用户等级（自用请输入1，共享请输入0 默认1）:" level
+	[ -z "$level" ] && level=1
 	if [[ ! $level =~ ^[0-1]$ ]]; then
 		echo "${CWARNING}输入错误! 请输入正确的数字!${CEND}"
 	else
