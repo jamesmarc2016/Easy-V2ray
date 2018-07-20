@@ -81,13 +81,13 @@ done
 
 echo ''
 
-read -p "输入主要端口（默认：32000）:" mainport
-[ -z "$mainport" ] && mainport=32000
+read -p "输入主要端口（默认：80）:" mainport
+[ -z "$mainport" ] && mainport=80
 
 echo ''
 
-read -p "是否启用HTTP伪装?（默认开启） [y/n]:" ifhttpheader
-	[ -z "$ifhttpheader" ] && ifhttpheader='y'
+read -p "是否启用HTTP伪装?（默认不开启） [y/n]:" ifhttpheader
+	[ -z "$ifhttpheader" ] && ifhttpheader='n'
 	if [[ $ifhttpheader == 'y' ]];then
 		httpheader=',
     "streamSettings": {
@@ -141,8 +141,8 @@ fi
 
 echo ''
 
-read -p "是否启用动态端口?（默认开启） [y/n]:" ifdynamicport
-  [ -z "$ifdynamicport" ] && ifdynamicport='y'
+read -p "是否启用动态端口?（默认不开启） [y/n]:" ifdynamicport
+  [ -z "$ifdynamicport" ] && ifdynamicport='n'
   if [[ $ifdynamicport == 'y' ]];then
 
     read -p "输入数据端口起点（默认：32001）:" subport1
