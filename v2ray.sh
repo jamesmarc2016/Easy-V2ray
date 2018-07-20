@@ -193,8 +193,8 @@ read -p "是否启用 Mux.Cool?（默认开启） [y/n]:" ifmux
 while :; do echo
   echo '1. HTTP代理（默认）'
   echo '2. Socks代理'
-  read -p "请选择客户端代理类型: " chooseproxytype
-  [ -z "$chooseproxytype" ] && chooseproxytype=1
+  read -p "请选择客户端代理类型（默认2）: " chooseproxytype
+  [ -z "$chooseproxytype" ] && chooseproxytype=2
   if [[ ! $chooseproxytype =~ ^[1-2]$ ]]; then
     echo '输入错误，请输入正确的数字！'
   else
