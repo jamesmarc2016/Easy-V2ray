@@ -128,12 +128,12 @@ read -p "是否启用HTTP伪装?（默认不开启） [y/n]:" ifhttpheader
     }'
 	else
 		httpheader=''
-		read -p "是否启用mKCP协议?（默认开启） [y/n]:" ifmkcp
+		read -p "是否启用ws协议?（默认开启） [y/n]:" ifmkcp
 		[ -z "$ifmkcp" ] && ifmkcp='y'
 		if [[ $ifmkcp == 'y' ]];then
         		mkcp=',
    		 		"streamSettings": {
-   			 	"network": "kcp"
+   			 	"network": "ws"
   				}'
 		else
 				mkcp=''
@@ -240,6 +240,7 @@ cat << EOF > config
     "port": $mainport,
     "protocol": "vmess",
     "settings": {
+		"udp": true,
         "clients": [
             {
                 "id": "$uuid",
